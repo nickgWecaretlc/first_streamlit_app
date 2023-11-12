@@ -31,7 +31,7 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 streamlit.text(fruityvice_respone.json()) #writes data to screen
 
 # normalize the line
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+fruityvice_normalized = pandas.json_normalized(fruityvice_response.json())
 #Creates table from choice
 streamlit.dataframe(fruityvice_normalized)
 
