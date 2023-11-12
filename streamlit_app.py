@@ -21,12 +21,15 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 
 streamlit.dataframe(fruits_to_show)
+#New Section to display fruityvice api response
+streamlit.header("Fruityvice Fruit Advice!")
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+streamlit.text(fruityvice_respone.json()) #writes data to screen
 
-# write your own comment -what does the next line do? 
+# normalize the line
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - what does this do?
+#Creates table from choice
 streamlit.dataframe(fruityvice_normalized)
 
